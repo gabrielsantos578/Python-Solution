@@ -1,6 +1,6 @@
 from setor.administrativo import menu_administrativo
 from setor.logística import menu_logistica
-from caixa import menu_caixa
+from setor.caixa import menu_caixa
 
 
 

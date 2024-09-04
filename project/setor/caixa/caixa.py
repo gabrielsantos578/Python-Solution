@@ -1,4 +1,4 @@
-from estoque import produtos
+from setor.estoque import produtos
 from setor.administrativo import administrativo
 
 

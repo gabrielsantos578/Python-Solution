@@ -1,4 +1,4 @@
-from estoque import operacoes
+from setor.estoque import operacoes
 
 
 
