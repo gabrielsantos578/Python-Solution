@@ -1,7 +1,7 @@
 from setor.administrativo import menu_administrativo
 from setor.logística import menu_logistica
 from setor.caixa import menu_caixa
-
+from teste import menu_injecao
 
 
 # Função para exibir o título principal da aplicação
@@ -14,6 +14,7 @@ def exibir_menu():
     print("1. Administrativo")
     print("2. Logística")
     print("3. Caixa")
+    print("4. Teste")
     print("0. Encerrar")
     
     return input("\n</> Escolha uma opção: ")
@@ -41,6 +42,12 @@ def exibir_interface():
         # Opção para acessar o menu do caixa
         elif escolha == "3":
             menu_caixa.exibir_interface()
+            exibir_titulo()  # Exibe o título novamente após retornar do menu do caixa
+            continue
+
+        # Opção para acessar o menu do caixa
+        elif escolha == "4":
+            menu_injecao.exibir_interface()
             exibir_titulo()  # Exibe o título novamente após retornar do menu do caixa
             continue
 

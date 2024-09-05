@@ -37,7 +37,7 @@ def adicionar_produto():
         # Verifica se o produto já está no carrinho
         produto_no_carrinho = next((item for item in venda if item["codigo_barra"] == codigo_barra), None)
         if produto_no_carrinho:
-            print(f"! Este código de barras {codigo_barra} já foi adicionado ao carrinho.")
+            print(f"\n! Este código de barras {codigo_barra} já foi adicionado ao carrinho.")
         else:
             venda.append({"codigo_barra": codigo_barra, "produto": produto_encontrado})
             print(f"\n> Item adicionado: Código de Barras: {codigo_barra}, Nome: {produto_encontrado['nome']}, R$ {produto_encontrado['preco']:.2f}")

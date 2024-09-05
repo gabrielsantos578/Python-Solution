@@ -1,7 +1,6 @@
 from utilitario import menu_principal
 
 
-
 # Função principal que inicializa o programa
 def main():
     menu_principal.exibir_interface()  # Chama a interface principal do menu
@@ -12,11 +11,10 @@ if __name__ == "__main__":
     main()  # Executa a função principal
 
 
-
-
-
 """
 --------------------------------------------------------------------------------------------------------------------
+
+Data: 03/09/1978
 
 Participantes:
 

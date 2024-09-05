@@ -58,29 +58,12 @@ def exibir_detalhes_produtos_vendidos():
             if nome_produto not in detalhes_vendidos:
                 detalhes_vendidos[nome_produto] = {
                     "quantidade_total": 0,
-                    "unidades": [],  # Lista para armazenar detalhes de cada unidade vendida
-                    "produtos_por_recibo": {}  # Dicionário para armazenar os produtos separados por recibo
+                    "unidades": []  # Lista para armazenar detalhes de cada unidade vendida
                 }
 
             # Atualiza a quantidade total e detalhes de cada unidade vendida
             detalhes_vendidos[nome_produto]["quantidade_total"] += 1
             detalhes_vendidos[nome_produto]["unidades"].append({
-                "codigo_barras": codigo_barras,
-                "nome": nome_produto,
-                "preco": preco
-            })
-
-            # Adiciona o produto ao dicionário de produtos por recibo
-            recibo_id = venda.get("id", "Desconhecido")  # Obtém um identificador do recibo, se disponível
-            if recibo_id not in detalhes_vendidos[nome_produto]["produtos_por_recibo"]:
-                detalhes_vendidos[nome_produto]["produtos_por_recibo"][recibo_id] = {
-                    "quantidade_total": 0,
-                    "unidades": []  # Lista para armazenar detalhes de cada unidade vendida
-                }
-            
-            detalhes_vendidos[nome_produto]["produtos_por_recibo"][recibo_id]["quantidade_total"] += 1
-            
-            detalhes_vendidos[nome_produto]["produtos_por_recibo"][recibo_id]["unidades"].append({
                 "codigo_barras": codigo_barras,
                 "nome": nome_produto,
                 "preco": preco
@@ -93,13 +76,6 @@ def exibir_detalhes_produtos_vendidos():
 
         for unidade in info["unidades"]:
             print(f"Código de Barras: {unidade['codigo_barras']}, Nome: {unidade['nome']}, Valor: R$ {unidade['preco']:.2f}")
-
-        # Exibe os produtos separados por recibo
-        for recibo_id, produtos_recibo in info["produtos_por_recibo"].items():
-            print(f"\nRecibo ID: {recibo_id} - Produto: {nome_produto} - Total Vendido: {produtos_recibo['quantidade_total']} unidade(s)")
-            
-            for unidade in produtos_recibo["unidades"]:
-                print(f"Código de Barras: {unidade['codigo_barras']}, Nome: {unidade['nome']}, Valor: R$ {unidade['preco']:.2f}")
 
 
 # Exibe todos os recibos das vendas realizadas
